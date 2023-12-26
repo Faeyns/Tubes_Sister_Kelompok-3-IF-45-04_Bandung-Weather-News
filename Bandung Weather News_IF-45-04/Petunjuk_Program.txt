@@ -1,0 +1,29 @@
+Default Run Program
+1. Jalankan StartReport.bat
+2. Jalankan StartSensor.bat
+3. Dah Mantap
+
+//Penyesuaian penggunaan broker yang diinginkan dapat diganti pada line kode
+exec(f"Sensor_{ID}.connect('localhost', 1883)")
+exec(f"Report_{ID}.connect('localhost', 1883)")
+
+//Untuk simulasi penyesuaian penambahan sensor
+dapat membuat file PubSensor dengan mengcopy PubSensor(ID),
+masukkan ID dengan angka unik dan sesuaikan dengan perintah pada file Pubsensor(ID)
+# Topic dan ID
+Topic = 'Bandung-Weather-News'
+ID = '000' # Tentukan ID
+
+//Untuk simulasi penyesuaian penggunaan report pada beda device dan penambahan sensor
+dapat membuat file SubReport baru dengan mengcopy SubReport(ID),
+masukkan ID dengan keterangan unik dan sesuaikan dengan perintah pada file SubReport
+dan tentukan juga jumlah sensor pada JumSensor yang akan dideteksi
+ID = 'Keterangan' # Tentukan ID
+JumSensor = 1 # Tentukan Jumlah Sensor
+
+//Penggunaan pada beda device
+dapat disesuaikan penggunaan broker dan penggunaan SubReport tertentu agar dapat menggunakan pada device berbeda
+
+PENTING!
+Ketika menambahkan publisher/sensor atau subscriber/report baru yang ingin dijalankan secara bersamaan,
+file .bat harus dimodifikasi juga
